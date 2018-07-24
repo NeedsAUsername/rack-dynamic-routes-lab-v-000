@@ -1,5 +1,5 @@
 def Application
-    @@item
+    @@items = []
 
 
     def call(env)
@@ -8,6 +8,14 @@ def Application
 
         if req.path.match(/songs/)
             item_name = req.path.split("/songs/").last
-            item = Item.
+            item = @@items.detect{|i| i.name = item_name}
+
+            resp.write item.price
+        else
+            resp.write "Route not found"
+            resp.status = 404
+        end
+
+        resp.finish
     end
 end
