@@ -5,6 +5,6 @@ def Application
 
         if req.path.match(/songs/)
             item_name = req.path.split("/songs/").last
-            item = @@
+            item = Item::
     end
 end
