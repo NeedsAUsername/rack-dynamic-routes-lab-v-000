@@ -1,4 +1,4 @@
-def Application
+class Application
     @@items = []
 
 
